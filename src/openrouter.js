@@ -1,4 +1,6 @@
 // backend/openrouter.js
+require('dotenv').config({ path: '../.env' });
+
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 async function getOpenRouterCompletion(prompt) {

@@ -11,7 +11,6 @@ router.post('/signup', async (req, res) => {
     if (password !== confirmPassword) {
         return res.status(400).json({ message: 'Passwords do not match' });
     }
-
     try {
         const userExist = await User.findOne({ email });
         if (userExist) {

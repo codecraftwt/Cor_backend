@@ -5,6 +5,9 @@ const jwt = require('jsonwebtoken');
 const Draft = require('../models/Draft');
 const mongoose = require('mongoose');
 
+
+
+
 router.post('/generate-press-release', async (req, res) => {
     const {
         type,
@@ -13,6 +16,9 @@ router.post('/generate-press-release', async (req, res) => {
         facts,
         company
     } = req.body;
+
+
+    console.log("port_ai", process.env.OPENROUTER_API_KEY)
 
     if (!type || !spokespersons || !reason || !company) {
         return res.status(400).json({ error: "Missing required fields" });
